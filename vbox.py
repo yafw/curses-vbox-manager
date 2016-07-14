@@ -72,9 +72,6 @@ class VBox(threading.Thread):
 
     # this will return output
     def call_command(self, cmd):
-        """with subprocess.Popen(cmd, stdout=subprocess.PIPE) as proc:
-            output = proc.stdout.read()
-        output = output.decode().split('\n')"""
         with subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE) as proc:
             output = proc.communicate()[0].decode().split('\n')
         output.pop()

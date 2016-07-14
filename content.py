@@ -40,7 +40,6 @@ class Content(Window):
 
     def table_content(self):
         y, x = 1, 1
-        #self.vbox.set_vms() 
         for i, vm in enumerate(self.vbox.vms):
             self.window.move(y, x)
             if i == self.index:
@@ -71,7 +70,7 @@ class Content(Window):
             self.window.attroff(curses.color_pair(1))
 
     def print_vm_status(self, status, active):
-        color_pair = 0
+        color_pair = 3
         if active == True and status == 'RUNNING':
             color_pair = 1
         elif active == False and status == 'RUNNING':
